@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:contentDescription="Name"
     tools:context=".MainActivity">
 
     <ImageView
@@ -23,8 +23,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginEnd="128dp"
         android:text="CelianDroidBurger"
+        android:textColor="#1D36C3"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,6 +37,7 @@
         android:layout_height="57dp"
         android:layout_marginTop="56dp"
         android:text="Bienvenue sur notre application de vente de burger en ligne"
+        android:textColor="#1D36C3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,6 +51,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="126dp"
         android:text="Remplissez ces champs pour passer commande."
+        android:textColor="#1D36C3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.077"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,13 +59,13 @@
 
 
     <EditText
-        android:id="@+id/editTextTextPostalAddress"
+        android:id="@+id/adressClient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPostalAddress"
-        android:text="Adresse"
+        android:hint="@string/client_address"
         app:layout_constraintEnd_toEndOf="@+id/prenomClient"
         app:layout_constraintStart_toStartOf="@+id/prenomClient"
         app:layout_constraintTop_toBottomOf="@+id/prenomClient" />
@@ -70,11 +74,12 @@
         android:id="@+id/nomClient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
+        android:hint="@string/client_name"
         android:inputType="textPersonName"
-        android:text="Nom"
         app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.216"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -85,51 +90,73 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Prénom"
         app:layout_constraintEnd_toEndOf="@+id/nomClient"
         app:layout_constraintStart_toStartOf="@+id/nomClient"
-        app:layout_constraintTop_toBottomOf="@+id/nomClient" />
+        app:layout_constraintTop_toBottomOf="@+id/nomClient"
+        android:hint="@string/client_firstname"/>
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/telephoneClient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="phone"
-        android:text="Téléphone"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPostalAddress"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPostalAddress"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPostalAddress" />
+        android:hint="@string/client_phone"
+        app:layout_constraintEnd_toEndOf="@+id/adressClient"
+        app:layout_constraintStart_toStartOf="@+id/adressClient"
+        app:layout_constraintTop_toBottomOf="@+id/adressClient" />
 
     <Spinner
-        android:id="@+id/planets_spinner"
+        android:id="@+id/burger_spinner"
         android:layout_width="213dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPhone"
+        android:entries="@array/burger"
+        app:layout_constraintEnd_toEndOf="@+id/telephoneClient"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextPhone"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+        app:layout_constraintStart_toStartOf="@+id/telephoneClient"
+        app:layout_constraintTop_toBottomOf="@+id/telephoneClient"
 
-    <EditText
-        android:id="@+id/editTextTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        />
+
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="194dp"
+        android:layout_height="30dp"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:hint="@string/datetime"
         android:inputType="time"
-        app:layout_constraintEnd_toEndOf="@+id/planets_spinner"
-        app:layout_constraintStart_toStartOf="@+id/planets_spinner"
-        app:layout_constraintTop_toBottomOf="@+id/planets_spinner" />
+        app:layout_constraintEnd_toEndOf="@+id/burger_spinner"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/burger_spinner"
+        app:layout_constraintTop_toBottomOf="@+id/burger_spinner" />
+
+    <Button
+        android:id="@+id/btnTimePicker"
+        android:layout_width="135dp"
+        android:layout_height="34dp"
+        android:layout_marginBottom="104dp"
+        android:text="Heure de livraison"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintStart_toEndOf="@+id/tvTime"
+        app:layout_constraintTop_toBottomOf="@+id/burger_spinner"
+        app:layout_constraintVertical_bias="0.4" />
 
     <Button
         android:id="@+id/buttonValidation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Commander"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTime"
-        app:layout_constraintStart_toStartOf="@+id/editTextTime"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTime" />
+        android:background="#1D36C3"
+        android:text="@string/commander"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvTime"
+        app:layout_constraintStart_toStartOf="@+id/tvTime"
+        app:layout_constraintTop_toBottomOf="@+id/tvTime" />
 </androidx.constraintlayout.widget.ConstraintLayout>
