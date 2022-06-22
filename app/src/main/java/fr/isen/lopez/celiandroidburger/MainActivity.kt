@@ -124,16 +124,17 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     var ConfirmationActivity =
                         Intent(this, ConfirmationActivity::class.java).apply {
-                            putExtra("referName", txtnom)
-                            putExtra("referAddress", txtadresse)
-                            putExtra("referPhone", txtnumero)
-                            putExtra("referTimeDelivery", txtheure)
-                            putExtra("referSelectedBurger", selectedItem)
+                            putExtra("toName", txtnom)
+                            putExtra("toName", txtprenom)
+                            putExtra("toAdress", txtadresse)
+                            putExtra("toPhone", txtnumero)
+                            putExtra("toTime", txtheure)
+                            putExtra("toBurger", selectedItem)
 
                         }
                     val sharedPref = this?.getSharedPreferences(getString(R.string.sharedpref), Context.MODE_PRIVATE)
-                    //val sharedPref = getPreferences(Context.MODE_PRIVATE)
                     with(sharedPref.edit()) {
+                        putString("saved_firstname", txtprenom)
                         putString("saved_name", txtnom)
                         putString("saved_address", txtadresse)
                         putString("saved_phone", txtnumero)

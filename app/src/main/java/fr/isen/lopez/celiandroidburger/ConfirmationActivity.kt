@@ -14,11 +14,11 @@ class ConfirmationActivity : AppCompatActivity() {
         val sharedPref = this.getSharedPreferences(getString(R.string.sharedpref), Context.MODE_PRIVATE)
 
         val getname = sharedPref.getString("saved_name", "default_name")
-        val getfirstname = sharedPref.getString("saved_name", "default_name")
-        val getadresse = intent.getStringExtra("referAddress")
-        val getnumero = intent.getStringExtra("referPhone")
-        val getburger = intent.getStringExtra("referSelectedBurger")
-        val getheure = intent.getStringExtra("referTimeDelivery")
+        val getfirstname = sharedPref.getString("saved_firstname", "default_name")
+        val getadresse = intent.getStringExtra("toAdress")
+        val getnumero = intent.getStringExtra("toPhone")
+        val getburger = intent.getStringExtra("toBurger")
+        val getheure = intent.getStringExtra("toTime")
 
         val nom = findViewById<TextView>(R.id.nomClientConfirmation)
         nom.text = getname
