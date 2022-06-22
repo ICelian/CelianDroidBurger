@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/logo" />
 
     <TextView
-        android:id="@+id/Confirmationtitle"
+        android:id="@+id/prenomClientConfirmation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
@@ -32,7 +32,7 @@
 
 
     <EditText
-        android:id="@+id/ConfirmationPostaleAdress"
+        android:id="@+id/nomClientConfirmation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
@@ -41,7 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Confirmationtitle" />
+        app:layout_constraintTop_toBottomOf="@+id/prenomClientConfirmation" />
 
     <EditText
         android:id="@+id/ConfirmationBurger"
@@ -52,7 +52,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ConfirmationPostaleAdress" />"
+        app:layout_constraintTop_toBottomOf="@+id/nomClientConfirmation" />"
         android:layout_height="wrap_content"
         android:layout_marginTop="108dp"
         android:ems="10"
