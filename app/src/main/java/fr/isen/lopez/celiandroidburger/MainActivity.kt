@@ -3,13 +3,10 @@ package fr.isen.lopez.celiandroidburger
 import android.app.TimePickerDialog
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
-import android.icu.util.Calendar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
-import fr.isen.lopez.celiandroidburger.databinding.ActivityConfirmationBinding
 import fr.isen.lopez.celiandroidburger.databinding.ActivityMainBinding
 
 
@@ -104,16 +101,16 @@ class MainActivity : AppCompatActivity() {
         binding.buttonValidation.setOnClickListener {
             commander.setOnClickListener { view: View ->
 
-                val txtnom = nom.text.toString()
-                val txtprenom = prenom.text.toString()
-                val txtadresse = adresse.text.toString()
-                val txtnumero = numero.text.toString()
-                val txtheure = heure.text.toString()
+                val textnom = nom.text.toString()
+                val textprenom = prenom.text.toString()
+                val textadresse = adresse.text.toString()
+                val textnumero = numero.text.toString()
+                val textheure = heure.text.toString()
 
 
 
-                if (txtnom.trim().isEmpty() || txtprenom.trim().isEmpty() || txtadresse.trim()
-                        .isEmpty() || txtnumero.trim().isEmpty() || txtheure.trim().isEmpty()
+                if (textnom.trim().isEmpty() || textprenom.trim().isEmpty() || textadresse.trim()
+                        .isEmpty() || textnumero.trim().isEmpty() || textheure.trim().isEmpty()
                 ) {
                     Toast.makeText(
                         this,
@@ -124,20 +121,21 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     var ConfirmationActivity =
                         Intent(this, ConfirmationActivity::class.java).apply {
-                            putExtra("toName", txtnom)
-                            putExtra("toName", txtprenom)
-                            putExtra("toAdress", txtadresse)
-                            putExtra("toPhone", txtnumero)
-                            putExtra("toTime", txtheure)
+                            putExtra("toName", textnom)
+                            putExtra("toName", textprenom)
+                            putExtra("toAdress", textadresse)
+                            putExtra("toPhone", textnumero)
+                            putExtra("toTime", textheure)
                             putExtra("toBurger", selectedItem)
+
 
                         }
                     val sharedPref = this?.getSharedPreferences(getString(R.string.sharedpref), Context.MODE_PRIVATE)
                     with(sharedPref.edit()) {
-                        putString("saved_firstname", txtprenom)
-                        putString("saved_name", txtnom)
-                        putString("saved_address", txtadresse)
-                        putString("saved_phone", txtnumero)
+                        putString("saved_firstname", textprenom)
+                        putString("saved_name", textnom)
+                        putString("saved_address", textadresse)
+                        putString("saved_phone", textnumero)
                         apply()
                     }
 

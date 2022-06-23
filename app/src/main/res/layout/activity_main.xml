@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:contentDescription="Name"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/gradient_background">
 
     <ImageView
         android:id="@+id/imageView"
@@ -25,8 +26,9 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="128dp"
         android:text="CelianDroidBurger"
-        android:textColor="#1D36C3"
+        android:textColor="@color/white"
         android:textStyle="bold"
+        android:background="@drawable/custom_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,8 +38,10 @@
         android:layout_width="264dp"
         android:layout_height="57dp"
         android:layout_marginTop="56dp"
-        android:text="Bienvenue sur notre application de vente de burger en ligne"
-        android:textColor="#1D36C3"
+        android:text="Un burger et plus si affinité? Venez deguster les MEILLEURS burger que vous n'avez jamais gouté."
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@drawable/custom_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +55,9 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="126dp"
         android:text="Remplissez ces champs pour passer commande."
-        android:textColor="#1D36C3"
+        android:textColor="@color/white"
+        android:background="@drawable/custom_input"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.077"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,8 +70,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:drawableStart="@drawable/ic_adresse"
         android:inputType="textPostalAddress"
         android:hint="@string/client_address"
+        android:textColorHint="@color/white"
+        android:background="@drawable/custom_input"
         app:layout_constraintEnd_toEndOf="@+id/prenomClient"
         app:layout_constraintStart_toStartOf="@+id/prenomClient"
         app:layout_constraintTop_toBottomOf="@+id/prenomClient" />
@@ -76,8 +85,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:ems="10"
+        android:drawableStart="@drawable/ic_name"
         android:hint="@string/client_name"
+        android:textColorHint="@color/white"
         android:inputType="textPersonName"
+        android:background="@drawable/custom_input"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintHorizontal_bias="0.216"
         app:layout_constraintStart_toStartOf="@+id/textView"
@@ -89,11 +101,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:drawableStart="@drawable/ic_name"
         android:inputType="textPersonName"
+        android:background="@drawable/custom_input"
         app:layout_constraintEnd_toEndOf="@+id/nomClient"
         app:layout_constraintStart_toStartOf="@+id/nomClient"
         app:layout_constraintTop_toBottomOf="@+id/nomClient"
-        android:hint="@string/client_firstname"/>
+        android:hint="@string/client_firstname"
+        android:textColorHint="@color/white"/>
 
     <EditText
         android:id="@+id/telephoneClient"
@@ -101,8 +116,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:drawableStart="@drawable/ic_phone"
+        android:background="@drawable/custom_input"
         android:inputType="phone"
         android:hint="@string/client_phone"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/adressClient"
         app:layout_constraintStart_toStartOf="@+id/adressClient"
         app:layout_constraintTop_toBottomOf="@+id/adressClient" />
@@ -113,6 +131,7 @@
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
         android:entries="@array/burger"
+
         app:layout_constraintEnd_toEndOf="@+id/telephoneClient"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/telephoneClient"
@@ -123,12 +142,14 @@
 
     <TextView
         android:id="@+id/tvTime"
-        android:layout_width="194dp"
-        android:layout_height="30dp"
+        android:layout_width="213dp"
+        android:layout_height="42dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/datetime"
+        android:background="@drawable/custom_input"
         android:inputType="time"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/burger_spinner"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/burger_spinner"
@@ -136,28 +157,32 @@
 
     <Button
         android:id="@+id/btnTimePicker"
-        android:layout_width="135dp"
-        android:layout_height="34dp"
+        android:layout_width="137dp"
+        android:layout_height="53dp"
         android:layout_marginBottom="104dp"
-        android:text="Heure de livraison"
+        android:background="@drawable/custom_button"
+        android:text=" Heure de livraison"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintHorizontal_bias="0.814"
         app:layout_constraintStart_toEndOf="@+id/tvTime"
         app:layout_constraintTop_toBottomOf="@+id/burger_spinner"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintVertical_bias="0.16" />
 
     <Button
         android:id="@+id/buttonValidation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="#1D36C3"
+        android:background="@drawable/custom_button"
         android:text="@string/commander"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/tvTime"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvTime"
-        app:layout_constraintTop_toBottomOf="@+id/tvTime" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTime"
+        app:layout_constraintVertical_bias="0.148" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

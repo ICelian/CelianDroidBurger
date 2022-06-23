@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ConfirmationActivity">
+    tools:context=".ConfirmationActivity"
+    android:background="@drawable/gradient_background">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -25,7 +26,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:text="Confirmation de commande"
-        android:textColor="#1D36C3"
+        android:textStyle="bold"
+        android:background="@drawable/custom_input"
+        android:textColor="@color/white"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.275"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
@@ -38,6 +42,7 @@
         android:layout_marginTop="56dp"
         android:ems="10"
         android:inputType="textPostalAddress"
+        android:background="@drawable/custom_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,6 +55,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:background="@drawable/custom_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nomClientConfirmation" />
@@ -61,6 +67,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:background="@drawable/custom_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,9 +77,11 @@
         android:id="@+id/telephoneConfirmation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/custom_input"
         android:ems="10"
-        android:inputType="textPersonName"
 
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/burgerConfirmation" />
@@ -84,6 +93,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:background="@drawable/custom_input"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,16 +104,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/heureConfirmation"
-        tools:layout_editor_absoluteX="101dp" />"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
+        android:background="@drawable/custom_input"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.328"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Confirmationtitle" />
+        app:layout_constraintTop_toBottomOf="@+id/heureConfirmation" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/custom_input"
+        android:text="Nous debutons la preparation de votre commande, merci d'avoir commandé chez Droid Burger"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressConfirmation" />"
+
 </androidx.constraintlayout.widget.ConstraintLayout>

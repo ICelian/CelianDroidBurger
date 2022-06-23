@@ -6,7 +6,7 @@
     <string name="client_address">Adresse</string>
     <string name="datetime">Heure livraison</string>
     <string name="commander">Commander</string>
-    <string name="sharedpref">lol</string>
+    <string name="sharedpref">pref</string>
     <string-array name="burger">
         <item>Burger du chef</item>
         <item>Cheese Burger</item>
